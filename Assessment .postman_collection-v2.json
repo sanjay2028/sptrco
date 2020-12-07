@@ -24,26 +24,18 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "movies[0][name]",
-							"value": "Sanjay",
-							"type": "text",
-							"disabled": true
+							"key": "name",
+							"value": "Fashion",
+							"type": "text"
 						},
 						{
-							"key": "movies[1][name]",
-							"value": "2001",
-							"type": "text",
-							"disabled": true
+							"key": "year",
+							"value": "2008",
+							"type": "text"
 						},
 						{
-							"key": "movies[2][name]",
-							"value": "Sanjay22",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "",
-							"value": "",
+							"key": "director",
+							"value": "Madhur Bhandarkar",
 							"type": "text"
 						}
 					]
@@ -68,17 +60,71 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:9200/api/movies",
-			"request": {
-				"method": "GET",
-				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "movies[0][name]",
+							"value": "Star Wars",
+							"type": "text"
+						},
+						{
+							"key": "movies[0][year]",
+							"value": "2017",
+							"type": "text"
+						},
+						{
+							"key": "movies[0][director]",
+							"value": "RIan Johnson",
+							"type": "text"
+						},
+						{
+							"key": "movies[1][name]",
+							"value": "Beauty and the Beast",
+							"type": "text"
+						},
+						{
+							"key": "movies[1][year]",
+							"value": "1992",
+							"type": "text"
+						},
+						{
+							"key": "movies[1][director]",
+							"value": "Bill Condon",
+							"type": "text"
+						},
+						{
+							"key": "movies[2][name]",
+							"value": "Titanic",
+							"type": "text"
+						},
+						{
+							"key": "movies[2][year]",
+							"value": "1999",
+							"type": "text"
+						},
+						{
+							"key": "movies[2][director]",
+							"value": "James Cameron",
+							"type": "text"
+						},
+						{
+							"key": "movies[3][name]",
+							"value": "Jursic Park",
+							"type": "text"
+						},
+						{
+							"key": "movies[3][year]",
+							"value": "1994",
+							"type": "text"
+						},
+						{
+							"key": "movies[3][director]",
+							"value": "Steven Spielbeg",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
 					"raw": "http://localhost:9200/api/movies",
 					"protocol": "http",
@@ -89,6 +135,39 @@
 					"path": [
 						"api",
 						"movies"
+					],
+					"query": [
+						{
+							"key": "movies[0][name]",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/api/movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/api/movies?query=Mastan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Mastan"
+						}
 					]
 				}
 			},
